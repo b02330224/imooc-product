@@ -1,0 +1,23 @@
+<table>
+    <thead>
+      <tr>
+          <th>Id</th>
+          <th>ProductName</th>
+          <th>ProductNum</th>
+          <th>ProductUrl</th>
+          <th>ProductImage</th>
+      </tr>
+    </thead>
+    <tbody>
+    {{range $i, $v := .productArray}}
+    <tr>
+        <td>{{$v.Id}}</td>
+        <td>{{$v.ProductName}}</td>
+        <td>{{$v.ProductNum}}</td>
+        <td>{{$v.ProductUrl}}</td>
+        <td>{{$v.ProductImage}}</td>
+        <td></td>
+    </tr>
+    {{end}}
+    </tbody>
+</table>

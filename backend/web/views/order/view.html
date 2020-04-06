@@ -1,0 +1,19 @@
+<table>
+    <thead>
+    <tr>
+        <th>id</th>
+        <th>商品名称</th>
+        <th>发货状态</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{range $i, $v := .order}}
+        <tr>
+            <td>{{$v.id}}</td>
+            <td>{{$v.productName}}</td>
+            <td>{{if eq $v.orderStatus "1"}}已发货{{else}}}未发货{{end}}</td>
+            <td></td>
+        </tr>
+    {{end}}
+    </tbody>
+</table>
