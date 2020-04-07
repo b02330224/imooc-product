@@ -42,6 +42,8 @@ func main() {
 
 	ctx, cancel := gcontext.WithCancel(gcontext.Background())
 	defer cancel()
+
+
 	productRepository := repositories.NewProductManager("product", db)
 	productService := services.NewProductService(productRepository)
 	productParty := app.Party("/product")
@@ -49,7 +51,7 @@ func main() {
 	product.Register(ctx, productService)
 	product.Handle(new(controllers.ProductController))
 
-	orderRepository := repositories.NewOrderManagerRepository("order", db)
+	orderRepository := repositories.NewOrderManagerRepository("`order`", db)
 	orderService := services.NewOrderService(orderRepository)
 	orderParty := app.Party("/order")
 	order := mvc.New(orderParty)

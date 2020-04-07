@@ -4,6 +4,7 @@ import (
 	"database/sql"
 	"imooc-product/common"
 	"imooc-product/datamodels"
+	"log"
 	"strconv"
 )
 
@@ -44,7 +45,8 @@ func (o *OrderManagerRepository) Insert(order *datamodels.Order) (orderId int64,
 		return
 	}
 
-	sql := "insert into " + o.table + "(userId, productId, orderStatus) values (?, ?, ?)"
+	sql := "insert into " + o.table + " (userId, productId, orderStatus) values (?, ?, ?)"
+	log.Println(sql)
 	stmt, err := o.mysqlConn.Prepare(sql)
 	if err != nil {
 		return

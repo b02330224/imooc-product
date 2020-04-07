@@ -65,7 +65,7 @@ func (c *UserController) PostLogin() mvc.Response {
 		}
 	}
 
-	c.Ctx.SetCookieKV("userId", strconv.FormatInt(user.Id, 10))
+	c.Ctx.SetCookieKV("uid", strconv.FormatInt(user.Id, 10))
 	c.Session.Set("userId", strconv.FormatInt(user.Id, 10))
 	return mvc.Response{
 		Path:"/product",

@@ -2,7 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="103ace95-c915-4a6e-ba02-67417c80f3a7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/backend/web/views/product/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/web/views/product/add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fronted/middlerware/auth.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fronted/web/controllers/product_controller.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fronted/web/views/product/result.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fronted/web/views/product/view.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fronted/web/views/shared/productLayout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/web/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend/web/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fronted/web/controllers/user_controller.go" beforeDir="false" afterPath="$PROJECT_DIR$/fronted/web/controllers/user_controller.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fronted/web/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/fronted/web/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/repositories/order_repository.go" beforeDir="false" afterPath="$PROJECT_DIR$/repositories/order_repository.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +63,7 @@
       <recent name="$PROJECT_DIR$/backend/views/shared" />
     </key>
   </component>
-  <component name="RunManager" selected="Go Build.go build imooc-product/backend/web">
+  <component name="RunManager" selected="Go Build.go build imooc-product/fronted/web">
     <configuration name="go build imooc-product/backend/web" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="imooc-product" />
       <working_directory value="$PROJECT_DIR$" />
@@ -108,8 +117,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Build.go build imooc-product/backend/web" />
         <item itemvalue="Go Build.go build imooc-product/fronted/web" />
+        <item itemvalue="Go Build.go build imooc-product/backend/web" />
         <item itemvalue="Go Test.TestDataToStructByTagSql in imooc-product/common" />
         <item itemvalue="Go Test.TestGetResultRows in imooc-product/common" />
         <item itemvalue="Go Test.TestGetResultRow in imooc-product/common" />
@@ -140,33 +149,33 @@
       <screen x="35" y="23" width="1405" height="877" />
     </state>
     <state x="497" y="349" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/35.23.1405.877@35.23.1405.877" timestamp="1586054804099" />
-    <state width="1363" height="288" key="GridCell.Tab.0.bottom" timestamp="1586229390404">
-      <screen x="29" y="23" width="1411" height="877" />
+    <state width="1363" height="288" key="GridCell.Tab.0.bottom" timestamp="1586251138163">
+      <screen x="30" y="23" width="1410" height="877" />
     </state>
     <state width="1363" height="472" key="GridCell.Tab.0.bottom/28.23.1412.877@28.23.1412.877" timestamp="1586174422499" />
     <state width="1363" height="288" key="GridCell.Tab.0.bottom/29.23.1411.877@29.23.1411.877" timestamp="1586229390404" />
-    <state width="1363" height="225" key="GridCell.Tab.0.bottom/30.23.1410.877@30.23.1410.877" timestamp="1586145403582" />
+    <state width="1363" height="288" key="GridCell.Tab.0.bottom/30.23.1410.877@30.23.1410.877" timestamp="1586251138163" />
     <state width="1343" height="217" key="GridCell.Tab.0.bottom/35.23.1405.877@35.23.1405.877" timestamp="1586058341553" />
-    <state width="1363" height="288" key="GridCell.Tab.0.center" timestamp="1586229390403">
-      <screen x="29" y="23" width="1411" height="877" />
+    <state width="1363" height="288" key="GridCell.Tab.0.center" timestamp="1586251138162">
+      <screen x="30" y="23" width="1410" height="877" />
     </state>
     <state width="1363" height="472" key="GridCell.Tab.0.center/28.23.1412.877@28.23.1412.877" timestamp="1586174422498" />
     <state width="1363" height="288" key="GridCell.Tab.0.center/29.23.1411.877@29.23.1411.877" timestamp="1586229390403" />
-    <state width="1363" height="225" key="GridCell.Tab.0.center/30.23.1410.877@30.23.1410.877" timestamp="1586145403581" />
+    <state width="1363" height="288" key="GridCell.Tab.0.center/30.23.1410.877@30.23.1410.877" timestamp="1586251138162" />
     <state width="1343" height="217" key="GridCell.Tab.0.center/35.23.1405.877@35.23.1405.877" timestamp="1586058341552" />
-    <state width="1363" height="288" key="GridCell.Tab.0.left" timestamp="1586229390403">
-      <screen x="29" y="23" width="1411" height="877" />
+    <state width="1363" height="288" key="GridCell.Tab.0.left" timestamp="1586251138161">
+      <screen x="30" y="23" width="1410" height="877" />
     </state>
     <state width="1363" height="472" key="GridCell.Tab.0.left/28.23.1412.877@28.23.1412.877" timestamp="1586174422497" />
     <state width="1363" height="288" key="GridCell.Tab.0.left/29.23.1411.877@29.23.1411.877" timestamp="1586229390403" />
-    <state width="1363" height="225" key="GridCell.Tab.0.left/30.23.1410.877@30.23.1410.877" timestamp="1586145403580" />
+    <state width="1363" height="288" key="GridCell.Tab.0.left/30.23.1410.877@30.23.1410.877" timestamp="1586251138161" />
     <state width="1343" height="217" key="GridCell.Tab.0.left/35.23.1405.877@35.23.1405.877" timestamp="1586058341552" />
-    <state width="1363" height="288" key="GridCell.Tab.0.right" timestamp="1586229390404">
-      <screen x="29" y="23" width="1411" height="877" />
+    <state width="1363" height="288" key="GridCell.Tab.0.right" timestamp="1586251138162">
+      <screen x="30" y="23" width="1410" height="877" />
     </state>
     <state width="1363" height="472" key="GridCell.Tab.0.right/28.23.1412.877@28.23.1412.877" timestamp="1586174422498" />
     <state width="1363" height="288" key="GridCell.Tab.0.right/29.23.1411.877@29.23.1411.877" timestamp="1586229390404" />
-    <state width="1363" height="225" key="GridCell.Tab.0.right/30.23.1410.877@30.23.1410.877" timestamp="1586145403582" />
+    <state width="1363" height="288" key="GridCell.Tab.0.right/30.23.1410.877@30.23.1410.877" timestamp="1586251138162" />
     <state width="1343" height="217" key="GridCell.Tab.0.right/35.23.1405.877@35.23.1405.877" timestamp="1586058341553" />
     <state x="246" y="100" key="SettingsEditor" timestamp="1586055010059">
       <screen x="35" y="23" width="1405" height="877" />
