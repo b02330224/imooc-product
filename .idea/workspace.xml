@@ -2,20 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="103ace95-c915-4a6e-ba02-67417c80f3a7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/datamodels/user.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fronted/web/controllers/user_controller.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fronted/web/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fronted/web/views/shared/error.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fronted/web/views/shared/layout.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fronted/web/views/user/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fronted/web/views/user/register.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/repositories/user_repository.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/user_service.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/web/views/product/manager.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/web/views/product/manager.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/web/views/product/view.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/web/views/product/view.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/web/views/shared/error.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/web/views/shared/error.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/web/views/product/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/web/views/product/add.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
