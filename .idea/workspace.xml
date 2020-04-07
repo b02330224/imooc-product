@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="103ace95-c915-4a6e-ba02-67417c80f3a7" name="Default Changelist" comment="" />
+    <list default="true" id="103ace95-c915-4a6e-ba02-67417c80f3a7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/datamodels/user.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fronted/web/controllers/user_controller.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fronted/web/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fronted/web/views/shared/error.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fronted/web/views/shared/layout.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fronted/web/views/user/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fronted/web/views/user/register.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/repositories/user_repository.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/user_service.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/web/views/product/manager.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/web/views/product/manager.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/web/views/product/view.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/web/views/product/view.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/web/views/shared/error.html" beforeDir="false" afterPath="$PROJECT_DIR$/backend/web/views/shared/error.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,10 +31,14 @@
     </option>
   </component>
   <component name="GOROOT" path="/usr/local/go" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="GoLibraries">
     <option name="indexEntireGoPath" value="false" />
   </component>
   <component name="ProjectId" id="1a6RT8jKW2Jm1HvRGeEUUAWuCDY" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -34,32 +53,36 @@
     <property name="configurable.Module.GOPATH.is.expanded" value="true" />
     <property name="configurable.Project.GOPATH.is.expanded" value="true" />
     <property name="go.import.settings.migrated" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/fronted/web/views/shared" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="go.vgo" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/fronted/web/views/shared" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/fronted/web" />
       <recent name="$PROJECT_DIR$/backend/web" />
       <recent name="$PROJECT_DIR$/backend/views/shared" />
     </key>
   </component>
   <component name="RunManager" selected="Go Build.go build imooc-product/backend/web">
-    <configuration name="go build imooc-product/backend" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="imooc-product" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="PACKAGE" />
-      <filePath value="$PROJECT_DIR$/backend/main.go" />
-      <package value="imooc-product/backend" />
-      <directory value="$PROJECT_DIR$/" />
-      <method v="2" />
-    </configuration>
     <configuration name="go build imooc-product/backend/web" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="imooc-product" />
       <working_directory value="$PROJECT_DIR$" />
       <kind value="PACKAGE" />
       <filePath value="$PROJECT_DIR$/backend/web/main.go" />
       <package value="imooc-product/backend/web" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build imooc-product/fronted/web" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="imooc-product" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <filePath value="$PROJECT_DIR$/fronted/web/main.go" />
+      <package value="imooc-product/fronted/web" />
       <directory value="$PROJECT_DIR$/" />
       <method v="2" />
     </configuration>
@@ -99,10 +122,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Go Build.go build imooc-product/backend/web" />
+        <item itemvalue="Go Build.go build imooc-product/fronted/web" />
         <item itemvalue="Go Test.TestDataToStructByTagSql in imooc-product/common" />
         <item itemvalue="Go Test.TestGetResultRows in imooc-product/common" />
         <item itemvalue="Go Test.TestGetResultRow in imooc-product/common" />
-        <item itemvalue="Go Build.go build imooc-product/backend" />
       </list>
     </recent_temporary>
   </component>
@@ -130,32 +153,32 @@
       <screen x="35" y="23" width="1405" height="877" />
     </state>
     <state x="497" y="349" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/35.23.1405.877@35.23.1405.877" timestamp="1586054804099" />
-    <state width="1363" height="288" key="GridCell.Tab.0.bottom" timestamp="1586174823809">
+    <state width="1363" height="288" key="GridCell.Tab.0.bottom" timestamp="1586229390404">
       <screen x="29" y="23" width="1411" height="877" />
     </state>
     <state width="1363" height="472" key="GridCell.Tab.0.bottom/28.23.1412.877@28.23.1412.877" timestamp="1586174422499" />
-    <state width="1363" height="288" key="GridCell.Tab.0.bottom/29.23.1411.877@29.23.1411.877" timestamp="1586174823809" />
+    <state width="1363" height="288" key="GridCell.Tab.0.bottom/29.23.1411.877@29.23.1411.877" timestamp="1586229390404" />
     <state width="1363" height="225" key="GridCell.Tab.0.bottom/30.23.1410.877@30.23.1410.877" timestamp="1586145403582" />
     <state width="1343" height="217" key="GridCell.Tab.0.bottom/35.23.1405.877@35.23.1405.877" timestamp="1586058341553" />
-    <state width="1363" height="288" key="GridCell.Tab.0.center" timestamp="1586174823808">
+    <state width="1363" height="288" key="GridCell.Tab.0.center" timestamp="1586229390403">
       <screen x="29" y="23" width="1411" height="877" />
     </state>
     <state width="1363" height="472" key="GridCell.Tab.0.center/28.23.1412.877@28.23.1412.877" timestamp="1586174422498" />
-    <state width="1363" height="288" key="GridCell.Tab.0.center/29.23.1411.877@29.23.1411.877" timestamp="1586174823808" />
+    <state width="1363" height="288" key="GridCell.Tab.0.center/29.23.1411.877@29.23.1411.877" timestamp="1586229390403" />
     <state width="1363" height="225" key="GridCell.Tab.0.center/30.23.1410.877@30.23.1410.877" timestamp="1586145403581" />
     <state width="1343" height="217" key="GridCell.Tab.0.center/35.23.1405.877@35.23.1405.877" timestamp="1586058341552" />
-    <state width="1363" height="288" key="GridCell.Tab.0.left" timestamp="1586174823807">
+    <state width="1363" height="288" key="GridCell.Tab.0.left" timestamp="1586229390403">
       <screen x="29" y="23" width="1411" height="877" />
     </state>
     <state width="1363" height="472" key="GridCell.Tab.0.left/28.23.1412.877@28.23.1412.877" timestamp="1586174422497" />
-    <state width="1363" height="288" key="GridCell.Tab.0.left/29.23.1411.877@29.23.1411.877" timestamp="1586174823807" />
+    <state width="1363" height="288" key="GridCell.Tab.0.left/29.23.1411.877@29.23.1411.877" timestamp="1586229390403" />
     <state width="1363" height="225" key="GridCell.Tab.0.left/30.23.1410.877@30.23.1410.877" timestamp="1586145403580" />
     <state width="1343" height="217" key="GridCell.Tab.0.left/35.23.1405.877@35.23.1405.877" timestamp="1586058341552" />
-    <state width="1363" height="288" key="GridCell.Tab.0.right" timestamp="1586174823808">
+    <state width="1363" height="288" key="GridCell.Tab.0.right" timestamp="1586229390404">
       <screen x="29" y="23" width="1411" height="877" />
     </state>
     <state width="1363" height="472" key="GridCell.Tab.0.right/28.23.1412.877@28.23.1412.877" timestamp="1586174422498" />
-    <state width="1363" height="288" key="GridCell.Tab.0.right/29.23.1411.877@29.23.1411.877" timestamp="1586174823808" />
+    <state width="1363" height="288" key="GridCell.Tab.0.right/29.23.1411.877@29.23.1411.877" timestamp="1586229390404" />
     <state width="1363" height="225" key="GridCell.Tab.0.right/30.23.1410.877@30.23.1410.877" timestamp="1586145403582" />
     <state width="1343" height="217" key="GridCell.Tab.0.right/35.23.1405.877@35.23.1405.877" timestamp="1586058341553" />
     <state x="246" y="100" key="SettingsEditor" timestamp="1586055010059">
