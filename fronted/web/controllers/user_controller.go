@@ -1,10 +1,11 @@
 package controllers
 
 import (
+	"fmt"
 	"github.com/kataras/iris"
 	"github.com/kataras/iris/mvc"
-	"github.com/kataras/iris/sessions"
 	"imooc-product/datamodels"
+	"imooc-product/encrypt"
 	"imooc-product/services"
 	"strconv"
 )
@@ -12,7 +13,6 @@ import (
 type UserController struct {
 	Ctx iris.Context
 	Service services.IUserService
-	Session *sessions.Session
 }
 
 func (c *UserController) GetRegister() mvc.View {
@@ -65,8 +65,13 @@ func (c *UserController) PostLogin() mvc.Response {
 		}
 	}
 
-	c.Ctx.SetCookieKV("uid", strconv.FormatInt(user.Id, 10))
-	c.Session.Set("userId", strconv.FormatInt(user.Id, 10))
+	uidByte := []byte(strconv.FormatInt(user.Id, 10))
+	uidString, err := encrypt.EnPwdCode(uidByte)
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	c.Ctx.SetCookieKV("sign", uidString)
 	return mvc.Response{
 		Path:"/product",
 	}

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<img src="{{.ProductImage}}" alt="" width="400" height="600">
+由html控制器生成{{.ProductName}}
+{{.ProductNum}}
+{{.ProductUrl}}
+
+<a href="/product/order?productId={{.Id}}">立即抢购</a>
+
+</body>
+</html>

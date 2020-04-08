@@ -4,14 +4,12 @@ import (
 	"context"
 	"github.com/kataras/iris"
 	"github.com/kataras/iris/mvc"
-	"github.com/kataras/iris/sessions"
 	"imooc-product/common"
 	"imooc-product/fronted/middlerware"
 	"imooc-product/fronted/web/controllers"
 	"imooc-product/repositories"
 	"imooc-product/services"
 	"log"
-	"time"
 )
 
 func main() {
@@ -27,6 +25,7 @@ func main() {
 
 	//设置模版目标
 	app.StaticWeb("/public", "./fronted/web/public")
+	app.StaticWeb("/html", "./fronted/web/htmlProductShow")
 
 	//出现异常跳转导指定页面
 	app.OnAnyErrorCode(func(ctx iris.Context) {
@@ -45,15 +44,10 @@ func main() {
 	ctx, cancel := context.WithCancel(context.Background())
 	defer cancel()
 
-	sess := sessions.New(sessions.Config{
-		Cookie:  "helloworld",
-		Expires: 60 * time.Minute,
-	})
-
 	userRepository := repositories.NewUserRepository("user", db)
 	userService := services.NewService(userRepository)
 	user := mvc.New(app.Party("/user"))
-	user.Register(ctx, userService, sess.Start)
+	user.Register(ctx, userService)
 	user.Handle(new(controllers.UserController))
 
 	product := repositories.NewProductManager("product", db)
@@ -66,7 +60,7 @@ func main() {
 	proProduct.Use(middlerware.AuthConProduct)
 
 	pro := mvc.New(proProduct)
-	pro.Register(ctx, productService, orderService, sess.Start)
+	pro.Register(ctx, productService, orderService)
 	pro.Handle(new(controllers.ProductController))
 
 	//启动服务
