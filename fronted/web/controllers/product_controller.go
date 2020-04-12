@@ -1,12 +1,13 @@
 package controllers
 
 import (
+	"encoding/json"
 	"github.com/kataras/iris"
 	"github.com/kataras/iris/mvc"
 	"html/template"
 	"imooc-product/datamodels"
+	"imooc-product/rabbitmq"
 	"imooc-product/services"
-	"log"
 	"os"
 	"path/filepath"
 	"strconv"
@@ -16,6 +17,7 @@ type ProductController struct {
 	Ctx iris.Context
 	ProductService services.IProductService
 	OrderService services.IOrderService
+	RabbitMQ   *rabbitmq.RabbitMQ
 }
 
 var (
@@ -59,9 +61,7 @@ func generateStaticHtml(ctx iris.Context, template *template.Template, fileName 
 	}
 	defer file.Close()
 
-	log.Println("product:", product)
 	template.Execute(file, product)
-
 }
 
 func exist(fileName string) bool {
@@ -84,57 +84,29 @@ func (p *ProductController) GetDetail() mvc.View {
 	}
 }
 
-func (p *ProductController) GetOrder() mvc.View {
+func (p *ProductController) GetOrder() []byte {
 	productIdString := p.Ctx.URLParam("productId")
 	userIdString := p.Ctx.GetCookie("uid")
-
-	productId , err := strconv.Atoi(productIdString)
+	productId, err := strconv.ParseInt(productIdString, 10, 64)
 	if err != nil {
 		p.Ctx.Application().Logger().Debug(err)
 	}
 
-	product, err := p.ProductService.GetProductById(int64(productId))
+	userId , err := strconv.ParseInt(userIdString, 10, 64)
 	if err != nil {
 		p.Ctx.Application().Logger().Debug(err)
 	}
 
-	var orderId int64
-	showMessage := "抢购失败!"
-	if product.ProductNum > 0 {
-		//扣除商品数量
-		product.ProductNum -= 1
-		err := p.ProductService.UpdateProduct(product)
-		if err != nil {
-			p.Ctx.Application().Logger().Debug(err)
-		}
-
-		//创建订单
-		userId , err := strconv.Atoi(userIdString)
-		if err != nil {
-			p.Ctx.Application().Logger().Debug(err)
-		}
-
-		order := &datamodels.Order{
-			UserId:int64(userId),
-			ProductId:int64(productId),
-			OrderStatus:datamodels.OrderSuccess,
-		}
-
-
-		orderId , err = p.OrderService.InsertOrder(order)
-		if err != nil {
-			p.Ctx.Application().Logger().Debug(err)
-		} else {
-			showMessage = "抢购成功"
-		}
+	message := datamodels.NewMessage(userId, productId)
+	byteMessage, err := json.Marshal(message)
+	if err != nil {
+		p.Ctx.Application().Logger().Debug(err)
 	}
 
-	return mvc.View{
-		Layout:"shared/productLayout.html",
-		Name:"product/result.html",
-		Data:iris.Map {
-			"orderId" : orderId,
-			"showMessage" : showMessage,
-		},
+	err = p.RabbitMQ.PublishSimple(string(byteMessage))
+	if err != nil {
+		p.Ctx.Application().Logger().Debug(err)
 	}
+
+	return []byte("true")
 }

@@ -11,7 +11,84 @@
 61
 /product/detail
 
-<a href="/product/order?productId=1">立即抢购</a>
+<input id="productId" value="1" hidden>
+<input type="button" value="立即抢购" id="getButton" onclick="rushToBuy()">
 
 </body>
+
+<script>
+    var userString = "uid"
+    var rushButtonId = "getButton"
+    var redirectUrl = "http://localhost:8080/user/login"
+
+    var interval = 10
+
+    var count = interval
+    var inter
+
+
+    function getCookie(name) {
+        var arr, reg = new RegExp("(^|)" + name + "=([^;]*)(;|$)")
+        if (arr = document.cookie.match(reg)) {
+            return unescape(arr[2]);
+        }
+        else {
+            return null
+        }
+    }
+
+    if (getCookie(userString) == null) {
+        location.href = redirectUrl
+    }
+
+    function rushToBuy() {
+        var productId = document.getElementById("productId").value;
+        document.getElementById(rushButtonId).setAttribute("disabled", true)
+
+        timeSub()
+
+
+        var xmlHttp
+        if (window.XMLHttpRequest) {
+            xmlHttp = new XMLHttpRequest()
+        } else {
+            xmlHttp = new ActiveXObject("Microsoft.XMLHTTP")
+        }
+
+        xmlHttp.onreadystatechange = function () {
+            if (xmlHttp.readyState == 4) {
+                if (xmlHttp.status == 200) {
+                    var result = xmlHttp.responseText
+                    if (result == "true") {
+                        alert("抢购成功")
+                    } else {
+                        alert("未抢到，请稍后重试")
+                    }
+                }
+            }
+        }
+
+        xmlHttp.open("GET", "http://localhost:8081/check?productId=" + productId, true)
+        xmlHttp.send()
+    }
+
+    function timeSub() {
+        inter = setInterval("timeFunc()", 1000)
+    }
+
+    function timeFunc() {
+        count--;
+        if (count <= 0) {
+            count = interval
+            document.getElementById(rushButtonId).removeAttribute("disabled")
+            document.getElementById(rushButtonId).value = "立即抢购"
+            clearInterval(inter)
+        } else {
+            document.getElementById(rushButtonId).value = "抢购等待" + count + "秒"
+        }
+    }
+
+
+</script>
+
 </html>

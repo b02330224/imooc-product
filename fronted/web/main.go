@@ -7,6 +7,7 @@ import (
 	"imooc-product/common"
 	"imooc-product/fronted/middlerware"
 	"imooc-product/fronted/web/controllers"
+	"imooc-product/rabbitmq"
 	"imooc-product/repositories"
 	"imooc-product/services"
 	"log"
@@ -50,6 +51,9 @@ func main() {
 	user.Register(ctx, userService)
 	user.Handle(new(controllers.UserController))
 
+
+	rabbitmq := rabbitmq.NewRabbitMQSimple("imoocProduct")
+
 	product := repositories.NewProductManager("product", db)
 	productService := services.NewProductService(product)
 
@@ -60,11 +64,11 @@ func main() {
 	proProduct.Use(middlerware.AuthConProduct)
 
 	pro := mvc.New(proProduct)
-	pro.Register(ctx, productService, orderService)
+	pro.Register(ctx, productService, orderService, rabbitmq)
 	pro.Handle(new(controllers.ProductController))
 
 	//启动服务
-	app.Run(iris.Addr("0.0.0.0:8883"),
+	app.Run(iris.Addr("0.0.0.0:8080"),
 		iris.WithoutServerError(iris.ErrServerClosed),
 		iris.WithOptimizations,
 	)

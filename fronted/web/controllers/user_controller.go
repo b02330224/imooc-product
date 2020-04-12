@@ -71,7 +71,9 @@ func (c *UserController) PostLogin() mvc.Response {
 		fmt.Println(err)
 	}
 
-	c.Ctx.SetCookieKV("sign", uidString)
+	c.Ctx.SetCookieKV("uid", strconv.FormatInt(user.Id, 10), iris.CookieHTTPOnly(false))
+	c.Ctx.SetCookieKV("sign", uidString, iris.CookieHTTPOnly(false))
+
 	return mvc.Response{
 		Path:"/product",
 	}
